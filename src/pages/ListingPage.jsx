@@ -1,0 +1,10 @@
+﻿import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { BlogCard, CaseStudyCard, PricingCard, ServiceCard } from '../components/Cards.jsx';
+import LeadForm from '../components/LeadForm.jsx';
+import { SectionTitle } from '../components/ui.jsx';
+import { pricing } from '../data/pricing.js';
+import { services } from '../data/services.js';
+export default function ListingPage({title,eyebrow,items=[],type}){useEffect(()=>{document.title=`${title} | Go Digital 24x7`},[title]);return <><section className="mesh pt-36 pb-20"><div className="container text-center"><p className="font-extrabold uppercase tracking-[.22em] text-[#6C3BFF]">{eyebrow}</p><h1 className="mx-auto mt-4 max-w-4xl text-5xl font-extrabold md:text-7xl">{title}</h1><p className="mx-auto mt-5 max-w-2xl text-lg text-slate-600">Premium frontend demo content for a conversion-focused Go Digital 24x7.</p></div></section><section className="section"><div className="container">{type==='services'&&<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">{services.map(s=><ServiceCard key={s.slug} s={s}/>)}</div>}{['portfolio','cases'].includes(type)&&<div className="grid gap-7 lg:grid-cols-3">{items.map(c=><CaseStudyCard key={c.title} c={c}/>)}</div>}{type==='pricing'&&<div className="grid gap-7 lg:grid-cols-3">{pricing.map(p=><PricingCard key={p.name} p={p}/>)}</div>}{type==='blog'&&<div className="grid gap-7 lg:grid-cols-3">{items.map(b=><BlogCard key={b.title} b={b}/>)}</div>}{type==='about'&&<div className="grid gap-10 lg:grid-cols-2"><img className="rounded-3xl object-cover shadow-2xl" src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=80" alt="Agency collaboration"/><div><SectionTitle eyebrow="Our approach" title="Creative strategy with performance discipline"/><p className="text-lg text-slate-600">We blend paid acquisition, SEO, content, web design and automation into growth systems that are easy to understand and improve.</p><Link className="btn btn-primary mt-7" to="/contact">Talk to us</Link></div></div>}</div></section></>}
+
+

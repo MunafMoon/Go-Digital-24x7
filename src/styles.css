@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root { font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif; color: #0b1020; background: #f8f9ff; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { margin: 0; overflow-x: hidden; }
+body:before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .05; z-index: 0; background-image: radial-gradient(#0b1020 1px, transparent 1px); background-size: 5px 5px; }
+a { color: inherit; text-decoration: none; }
+.container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+.section { padding: 96px 0; position: relative; }
+.gradient-text { background: linear-gradient(100deg,#6c3bff,#ff3cac,#ff8a00); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font-weight: 800; transition: .25s ease; border: 0; cursor: pointer; }
+.btn-primary { color: white; background: linear-gradient(100deg,#6c3bff,#ff3cac); box-shadow: 0 18px 36px rgba(108,59,255,.24); }
+.btn-ghost { color:#0b1020; background: rgba(255,255,255,.78); border: 1px solid rgba(11,16,32,.1); }
+.btn:hover { transform: translateY(-2px) scale(1.02); }
+.glass { background: rgba(255,255,255,.74); border: 1px solid rgba(255,255,255,.7); backdrop-filter: blur(20px); box-shadow: 0 24px 70px rgba(35,45,92,.13); }
+.dark { color: white; background: #0b1020; }
+.mesh { background: radial-gradient(circle at 15% 10%, rgba(108,59,255,.18), transparent 28%), radial-gradient(circle at 85% 20%, rgba(0,212,255,.18), transparent 28%), linear-gradient(180deg,#fff,#f8f9ff); }
+.card { border-radius: 24px; }
+.progress { position: fixed; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg,#6c3bff,#ff3cac,#ff8a00); transform-origin: 0%; z-index: 100; }
+.field { width: 100%; border: 1px solid rgba(11,16,32,.12); border-radius: 16px; padding: 14px 16px; outline: 0; background: rgba(255,255,255,.88); }
+.field:focus { border-color: #6c3bff; box-shadow: 0 0 0 4px rgba(108,59,255,.12); }
+.marquee { animation: marquee 22s linear infinite; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (max-width: 768px) { .section { padding: 68px 0; } .container { width: min(100% - 24px, 1180px); } }
+

@@ -1,0 +1,15 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Go Digital 24x7</title>
+    <script>
+      var base = '/Go-Digital-24x7/';
+      var path = window.location.pathname;
+      var route = path.indexOf(base) === 0 ? path.slice(base.length) : '';
+      var target = base + '#/' + route + window.location.search + window.location.hash;
+      window.location.replace(target);
+    </script>
+  </head>
+  <body></body>
+</html>

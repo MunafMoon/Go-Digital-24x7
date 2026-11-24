@@ -1,4 +1,5 @@
-﻿import { AnimatePresence, motion, useScroll } from 'framer-motion';
+import { useLayoutEffect } from 'react';
+import { AnimatePresence, motion, useScroll } from 'framer-motion';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
@@ -17,6 +18,11 @@ import { blogs } from './data/blogs.js';
 export default function App() {
   const location = useLocation();
   const { scrollYProgress } = useScroll();
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [location.key]);
+
   return (
     <>
       <motion.div className="progress" style={{ scaleX: scrollYProgress }} />
